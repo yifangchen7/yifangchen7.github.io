@@ -1,78 +1,85 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Home — Yifang Chen</title>
-<meta name="description" content="Hi, this is Yifang Chen" />
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='80'>🧪</text></svg>">
-<link rel="preload" href="assets/styles.css" as="style">
-<link rel="stylesheet" href="assets/styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Home — Yifang Chen</title>
+  <meta name="description" content="Hi, this is Yifang Chen" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='80'>🧪</text></svg>">
+  <link rel="preload" href="assets/styles.css" as="style">
+  <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
-<header class="header">
-<div class="inner">
-<a class="brand" href="/">
-<span class="avatar" aria-hidden="true">YC</span>
-<div>
-<h1>Yifang Chen</h1>
-<p>Computational biophysics · Chromatin modeling</p>
-</div>
-</a>
-<nav class="nav" aria-label="Primary">
-<a href="index.html" aria-current="page">Home</a>
-<a href="research.html">Research</a>
-<a href="education.html">Education</a>
-<a href="beyond.html">Beyond Research</a>
-</nav>
-</div>
-</header>
+  <header class="header">
+    <div class="inner">
+      <a class="brand" href="/">
+        <span class="avatar" aria-hidden="true">YC</span>
+        <div>
+          <h1>Yifang Chen</h1>
+          <p>Computational biophysics · Chromatin modeling</p>
+        </div>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="research.html">Research</a>
+        <a href="education.html">Education</a>
+        <a href="beyond.html">Beyond Research</a>
+      </nav>
+    </div>
+  </header>
 
+  <div class="container main">
+    <aside class="sidebar">
+      <div class="card">
+        <h2>Contact</h2>
+        <ul>
+          <li>Email: <a href="mailto:yc638@cam.ac.uk">yc638@cam.ac.uk</a></li>
+          <li>GitHub: <a href="https://github.com/yifangchen7" target="_blank" rel="noopener">@yifangchen7</a></li>
+          <li>LinkedIn: <a href="#" target="_blank" rel="noopener">linkedin.com/in/…</a></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>Keywords</h2>
+        <div class="grid">
+          <span class="pill">OpenMM</span>
+          <span class="pill">PLUMED</span>
+          <span class="pill">TICA/MSM</span>
+          <span class="pill">Chromatin</span>
+          <span class="pill">Adaptive sampling</span>
+        </div>
+      </div>
+    </aside>
 
-<div class="container main">
-<aside class="sidebar">
-<div class="card">
-<h2>Contact</h2>
-<ul>
-<li>Email: <a href="yc638@cam.ac.uk">your-email@example.com</a></li>
-<li>GitHub: <a href="https://github.com/yifangchen7" target="_blank" rel="noopener">@yifangchen7</a></li>
-<li>LinkedIn: <a href="#" target="_blank" rel="noopener">linkedin.com/in/…</a></li>
-</ul>
-</div>
-<div class="card">
-<h2>Keywords</h2>
-<div class="grid">
-<span class="pill">OpenMM</span>
-<span class="pill">PLUMED</span>
-<span class="pill">TICA/MSM</span>
-<span class="pill">Chromatin</span>
-<span class="pill">Adaptive sampling</span>
-</div>
-</div>
-</aside>
+    <main class="content" id="content">
+      <section class="section">
+        <h2>About</h2>
+        <p class="lead">I’m a PhD student in computational biophysics.</p>
+      </section>
 
+      <section class="section">
+        <h2>News</h2>
+        <ul>
+          <li><span class="small">Sep 2025</span> – Launched this website 🎉</li>
+        </ul>
+      </section>
 
-<main class="content" id="content">
-<section class="section">
-<h2>About</h2>
-<p class="lead">I’m a PhD student in computational biophysics</p>
-</section>
+      <section class="section">
+        <h2>Selected Projects</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>Chromatin MSM Pipeline</h3>
+            <p>End-to-end workflow: trajectory processing → TICA → k-means → MSM → PCCA → seed selection for adaptive runs.</p>
+            <p class="small"><a href="#">Code</a> · <a href="#">Preprint</a></p>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
 
-
-<section class="section">
-<h2>News</h2>
-<ul>
-<li><span class="small">Sep 2025</span> – Launched this website 🎉</li>
-</ul>
-</section>
-
-
-<section class="section">
-<h2>Selected Projects</h2>
-<div class="grid">
-<article class="card">
-<h3>Chromatin MSM Pipeline</h3>
-<p>End-to-end workflow: trajectory processing → TICA → k-means → MSM → PCCA → seed selection for adaptive runs.</p>
-<p class="small"><a href="#">Code</a> · <a href="#">Preprint</a></p>
-</article>
+  <footer class="footer">
+    <p>© <span id="y"></span> Yifang Chen</p>
+  </footer>
+  <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
+</body>
 </html>
+
