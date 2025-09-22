@@ -1,82 +1,78 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Personal Webpage</title>
-    <style>
-        body {
-            font-family: 'Calibri', sans-serif;
-            background-color: #FDFFE2;
-            color: #1A2130;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #83B4FF;
-            color: #FDFFE2;
-            padding: 20px;
-            text-align: center;
-        }
-        nav {
-            text-align: center;
-            margin-top: 20px;
-        }
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #5A72A0;
-            font-weight: bold;
-        }
-        section {
-            padding: 20px;
-        }
-        footer {
-            background-color: #1A2130;
-            color: #FDFFE2;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-    </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Home — Yifang Chen</title>
+<meta name="description" content="Academic homepage of Yifang Chen" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='80'>🧪</text></svg>">
+<link rel="preload" href="assets/styles.css" as="style">
+<link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
-    <header>
-        <h1>My Personal Webpage</h1>
-        <nav>
-            <a href="#about">About Me</a>
-            <a href="#portfolio">Portfolio</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
-    <div class="container">
-        <section id="about">
-            <h2>About Me</h2>
-            <p>Welcome to my personal webpage. Here you will find information about my background, my research interests, and my work portfolio.</p>
-        </section>
-        <section id="portfolio">
-            <h2>Portfolio</h2>
-            <p>Here is a showcase of my work and projects.</p>
-            <!-- Add your projects here -->
-        </section>
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>If you wish to get in touch, please find my contact details below.</p>
-            <ul>
-                <li>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></li>
-                <li>LinkedIn: <a href="https://www.linkedin.com/in/your-profile" target="_blank">Your LinkedIn Profile</a></li>
-                <li>GitHub: <a href="https://github.com/your-username" target="_blank">Your GitHub Profile</a></li>
-            </ul>
-        </section>
-    </div>
-    <footer>
-        <p>&copy; 2024 Your Name. All rights reserved.</p>
-    </footer>
-</body>
+<header class="header">
+<div class="inner">
+<a class="brand" href="/">
+<span class="avatar" aria-hidden="true">YC</span>
+<div>
+<h1>Yifang Chen</h1>
+<p>Computational biophysics · Chromatin modeling</p>
+</div>
+</a>
+<nav class="nav" aria-label="Primary">
+<a href="index.html" aria-current="page">Home</a>
+<a href="research.html">Research</a>
+<a href="education.html">Education</a>
+<a href="beyond.html">Beyond Research</a>
+</nav>
+</div>
+</header>
+
+
+<div class="container main">
+<aside class="sidebar">
+<div class="card">
+<h2>Contact</h2>
+<ul>
+<li>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></li>
+<li>GitHub: <a href="https://github.com/yifangchen7" target="_blank" rel="noopener">@yifangchen7</a></li>
+<li>LinkedIn: <a href="#" target="_blank" rel="noopener">linkedin.com/in/…</a></li>
+</ul>
+</div>
+<div class="card">
+<h2>Keywords</h2>
+<div class="grid">
+<span class="pill">OpenMM</span>
+<span class="pill">PLUMED</span>
+<span class="pill">TICA/MSM</span>
+<span class="pill">Chromatin</span>
+<span class="pill">Adaptive sampling</span>
+</div>
+</div>
+</aside>
+
+
+<main class="content" id="content">
+<section class="section">
+<h2>About</h2>
+<p class="lead">I’m a researcher focused on chromatin simulations, MSM modeling, and adaptive sampling. I build tools around OpenMM & PLUMED and analyze large trajectories with TICA, clustering, and PCCA.</p>
+</section>
+
+
+<section class="section">
+<h2>News</h2>
+<ul>
+<li><span class="small">Sep 2025</span> – Launched this website 🎉</li>
+</ul>
+</section>
+
+
+<section class="section">
+<h2>Selected Projects</h2>
+<div class="grid">
+<article class="card">
+<h3>Chromatin MSM Pipeline</h3>
+<p>End-to-end workflow: trajectory processing → TICA → k-means → MSM → PCCA → seed selection for adaptive runs.</p>
+<p class="small"><a href="#">Code</a> · <a href="#">Preprint</a></p>
+</article>
 </html>
