@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light dark">
   <title>Home — Yifang Chen</title>
   <meta name="description" content="Hi, this is Yifang Chen" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='80'>🧪</text></svg>">
@@ -30,44 +31,54 @@
     </div>
   </header>
 
-  <div class="container main">
-    <aside class="sidebar">
-      <div class="card">
-        <h2>Contact</h2>
-        <address>
-          <ul>
-            <li>Email: <a href="mailto:yc638@cam.ac.uk">yc638@cam.ac.uk</a></li>
-            <li>GitHub: <a href="https://github.com/yifangchen7" target="_blank" rel="noopener noreferrer">@yifangchen7</a></li>
-            <li>LinkedIn: <a href="https://www.linkedin.com/in/yifang-chen-671aa1235/" target="_blank" rel="noopener noreferrer">linkedin.com/in/YOUR-HANDLE</a></li>
-            <li>ORCID: <a href="https://orcid.org/0009-0009-6922-5332" target="_blank" rel="noopener noreferrer">0000-0000-0000-0000</a></li>
-          </ul>
-        </address>
-      </div>
-      <div class="card">
-        <h2>CV</h2>
-        <p><a href="cv.pdf" target="_blank" rel="noopener noreferrer">Download CV</a></p>
-      </div>
-    </aside>
+  <main class="content" id="content" tabindex="-1">
+    <div class="container main">
+      <aside class="sidebar">
+        <div class="card">
+          <h2>Contact</h2>
+          <address>
+            <ul>
+              <li>Email: <a href="mailto:yc638@cam.ac.uk">yc638@cam.ac.uk</a></li>
+              <li>GitHub: <a href="https://github.com/yifangchen7" target="_blank" rel="noopener noreferrer">@yifangchen7</a></li>
+              <li>LinkedIn: <a href="https://www.linkedin.com/in/yifang-chen-671aa1235/"
+                  target="_blank" rel="noopener noreferrer"
+                  title="linkedin.com/in/yifang-chen-671aa1235/">LinkedIn</a></li>
+              <li>ORCID: <a href="https://orcid.org/0009-0009-6922-5332" target="_blank" rel="noopener noreferrer">0009-0009-6922-5332</a></li>
+            </ul>
+          </address>
+        </div>
+        <div class="card">
+          <h2>CV</h2>
+          <p><a href="cv.pdf" target="_blank" rel="noopener noreferrer">Download CV</a></p>
+        </div>
+      </aside>
 
-    <main class="content" id="content">
       <section class="section">
         <h2>News</h2>
-        <ul>
-          <li><span class="small">Sep 2025</span> – Launched this website 🎉</li>
-        </ul>
+        <ul></ul>
       </section>
       <!-- Add more <section> blocks here as you like -->
-    </main>
-  </div>
+    </div>
+  </main>
 
   <footer class="footer">
     <p>© <span id="y"></span> Yifang Chen</p>
   </footer>
 
   <script>
-    document.getElementById('y').textContent = new Date().getFullYear()
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Hide empty News section (optional)
+    (function () {
+      const section = document.querySelector('.section');
+      const list = section ? section.querySelector('ul') : null;
+      if (list && list.children.length === 0) {
+        section.style.display = 'none';
+      }
+    })();
   </script>
 </body>
 </html>
+
 
 
