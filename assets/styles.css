@@ -66,11 +66,49 @@
 
   /* DARK MODE */
   @media (prefers-color-scheme: dark){
-    :root{--bg:#0b1220; --panel:#0f172a; --ink:#e5e7eb; --muted:#94a3b8; --accent:#60a5fa; --border:#1f2937}
-    .header{background:#1e293b; color:#f1f5f9; border-bottom:2px solid #1f2937}
-    .header .nav a{ background:transparent; border:1px solid rgba(255,255,255,.25); color:#f1f5f9; }
-    .header .nav a:hover{ background:rgba(255,255,255,.1); }
-    .header .nav a[aria-current="page"]{ background:rgba(255,255,255,.2); border-color:rgba(255,255,255,.4); }
+/* --- DISTINCT HEADER + SEPARATOR LINE --- */
+:root{
+  --header-bg:#0f172a;     /* dark header background */
+  --header-ink:#e5e7eb;    /* header text color */
+  --main-bg:#f8fafc;       /* main area background (can keep same as body or tweak) */
+  --line:#cbd5e1;          /* stronger separator line */
+}
+
+/* Dark header with a clear bottom border */
+.header{
+  background:var(--header-bg);
+  color:var(--header-ink);
+  border-bottom:2px solid var(--line);
+}
+/* Make header links inherit the header color */
+.header a{ color:inherit; }
+
+/* Invert the nav styling when it's inside the dark header */
+.header .nav a{
+  background:transparent;
+  border:1px solid rgba(255,255,255,.18);
+  color:var(--header-ink);
+}
+.header .nav a:hover{ background:rgba(255,255,255,.06); }
+.header .nav a[aria-current="page"]{
+  background:rgba(255,255,255,.12);
+  border-color:rgba(255,255,255,.3);
+}
+
+/* Give the main content area its own background (optional) */
+.content{ background:var(--main-bg); }
+
+/* Dark mode equivalents */
+@media (prefers-color-scheme: dark){
+  :root{
+    --header-bg:#0f172a;
+    --header-ink:#e5e7eb;
+    --main-bg:#0b1220;
+    --line:#1f2937;
+  }
+  .header .nav a{ border-color:rgba(255,255,255,.18); color:var(--header-ink); }
+  .header .nav a[aria-current="page"]{ background:rgba(255,255,255,.12); }
+}
     .nav a{background:#121827; border-color:var(--border); color:var(--ink)}
     .nav a[aria-current="page"]{background:#1a2230}
     .brand .avatar{background:#1e293b}
