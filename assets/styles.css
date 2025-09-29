@@ -22,7 +22,7 @@
 
   /* Layout */
   .container{max-width:var(--max); margin:0 auto; padding:24px}
-  .header{border-bottom:1px solid var(--border); background:var(--panel)}
+  .header{background:#0f172a; color:#e5e7eb; border-bottom:2px solid #cbd5e1}
   .header .inner{display:flex; align-items:center; gap:18px; padding:16px 24px; margin:0 auto; max-width:var(--max)}
   .brand{display:flex; align-items:center; gap:12px; text-decoration:none; color:inherit}
   .brand .avatar{width:44px; height:44px; border-radius:50%; background:#eef2ff; display:grid; place-items:center; font-weight:700}
@@ -33,7 +33,12 @@
   .nav{margin-left:auto; display:flex; gap:14px; flex-wrap:wrap}
   .nav a{display:inline-block; padding:10px 12px; border-radius:10px; text-decoration:none; color:var(--ink); background:#f1f5f9; border:1px solid var(--border)}
   .nav a:hover{filter:brightness(0.98)}
-  .nav a[aria-current="page"]{background:#e2e8f0; border-color:#cbd5e1; font-weight:600}
+  $1
+
+/* Invert nav links when placed inside the dark header */
+.header .nav a{ background:transparent; border:1px solid rgba(255,255,255,.18); color:#e5e7eb; }
+.header .nav a:hover{ background:rgba(255,255,255,.06); }
+.header .nav a[aria-current="page"]{ background:rgba(255,255,255,.12); border-color:rgba(255,255,255,.3); }
 
   .main{display:grid; grid-template-columns:280px 1fr; gap:24px; margin-top:24px}
   @media (max-width:860px){.main{grid-template-columns:1fr} .sidebar{position:static} .container{padding:16px}}
@@ -49,7 +54,8 @@
   .sidebar ul{list-style:none; margin:0; padding:0}
   .sidebar li{margin:6px 0}
 
-  /* Content */
+  $1
+  .content{ background:#f8fafc; }
   .content .section{background:var(--panel); border:1px solid var(--border); border-radius:14px; padding:18px; margin-bottom:18px}
   .content h2{margin:0 0 8px}
   .lead{color:var(--muted)}
@@ -63,6 +69,14 @@
   /* DARK MODE */
   @media (prefers-color-scheme: dark){
     :root{--bg:#0b1220; --panel:#0f172a; --ink:#e5e7eb; --muted:#94a3b8; --accent:#60a5fa; --border:#1f2937}
+    .header{background:#0f172a; color:#e5e7eb; border-bottom:2px solid #1f2937}
+    .header .nav a{ background:transparent; border:1px solid rgba(255,255,255,.18); color:#e5e7eb; }
+    .header .nav a:hover{ background:rgba(255,255,255,.08); }
+    .header .nav a[aria-current="page"]{ background:rgba(255,255,255,.16); border-color:rgba(255,255,255,.3); }
+    .nav a{background:#121827; border-color:var(--border); color:var(--ink)}
+    .nav a[aria-current="page"]{background:#1a2230}
+    .brand .avatar{background:#1e293b}
+  }
     .nav a{background:#121827; border-color:var(--border); color:var(--ink)}
     .nav a[aria-current="page"]{background:#1a2230}
     .brand .avatar{background:#1e293b}
@@ -121,5 +135,6 @@
   <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
 </body>
 </html>
+
 
 
