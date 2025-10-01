@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="color-scheme" content="light dark" />
   <title>Preview — Nav & Layout CSS</title>
+
+  <!-- Favicon emoji -->
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='80'>🧪</text></svg>">
+
   <style>
   /* ---------- Tokens ---------- */
   :root{
@@ -31,7 +36,7 @@
   }
 
   /* ---------- Header / nav ---------- */
-  .header{background:#202b3b; color:#f8fafc; border-bottom:2px solid #cbd5e1}
+  .header{background:#202b3b; color:#f8fafc; border-bottom:2px solid #cbd5e1; position:relative;}
   .header .inner{display:flex; align-items:center; gap:18px; padding:16px 24px; margin:0 auto; max-width:var(--max)}
   .brand{display:flex; align-items:center; gap:12px; text-decoration:none; color:inherit}
   .brand .avatar{
@@ -44,7 +49,7 @@
 
   .nav{margin-left:auto; display:flex; gap:14px; flex-wrap:wrap}
   .nav a{display:inline-block; padding:10px 12px; border-radius:10px; text-decoration:none;
-         color:var(--ink); background:#f1f5f9; border:1px solid var(--border)}
+         color:var(--ink); background:#f1f5f9; border:1px solid var(--border); position:relative; z-index:1;}
   .nav a:hover{filter:brightness(0.98)}
   /* invert nav in header */
   .header .nav a{ background:transparent; border:1px solid rgba(255,255,255,.25); color:#f8fafc; }
@@ -81,7 +86,7 @@
   /* Hide empty sections (modern browsers) */
   .section:has(> ul:empty), .section:has(> ol:empty){ display:none }
 
-  /* ---------- Dark Theme ---------- */
+  /* ---------- Dark Theme (toggle via body.theme-dark) ---------- */
   .theme-dark{
     --bg:#0b1220; --panel:#0f172a; --ink:#e5e7eb; --muted:#94a3b8;
     --accent:#60a5fa; --border:#1f2937;
@@ -103,13 +108,12 @@
   </style>
 </head>
 
-<!-- Add or remove class="theme-dark" to toggle -->
 <body class="theme-dark">
   <a class="skip-link" href="#content">Skip to main content</a>
 
   <header class="header">
     <div class="inner">
-      <a class="brand" href="#">
+      <a class="brand" href="/">
         <span class="avatar" aria-hidden="true">YC</span>
         <div>
           <h1>Yifang Chen</h1>
@@ -117,9 +121,9 @@
         </div>
       </a>
       <nav class="nav" aria-label="Primary">
-        <a href="#" aria-current="page">Home</a>
-        <a href="#">Research</a>
-        <a href="#">Education</a>
+        <a href="/index.html" aria-current="page">Home</a>
+        <a href="/research.html">Research</a>
+        <a href="/education.html">Education</a>
       </nav>
     </div>
   </header>
@@ -131,8 +135,8 @@
           <h2>Contact</h2>
           <ul>
             <li>Email: <a href="mailto:yc638@cam.ac.uk">yc638@cam.ac.uk</a></li>
-            <li>GitHub: <a href="#">@yifangchen7</a></li>
-            <li>LinkedIn: <a href="#">LinkedIn</a></li>
+            <li>GitHub: <a href="https://github.com/yifangchen7" target="_blank" rel="noopener noreferrer">@yifangchen7</a></li>
+            <li>LinkedIn: <a href="https://www.linkedin.com/in/yifang-chen-671aa1235/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
           </ul>
         </div>
       </aside>
@@ -155,11 +159,10 @@
 
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
-    // Optional: simple light/dark toggle for experiments
-    // document.body.classList.toggle('theme-dark');
   </script>
 </body>
 </html>
+
 
 
 
