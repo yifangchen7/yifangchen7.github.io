@@ -4,19 +4,15 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="color-scheme" content="light dark" />
-  <title>Preview — Nav & Layout CSS</title>
-
-  <!-- Favicon emoji -->
-  <link rel="icon"
-    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='80'>🙂</text></svg>">
-
+  <title>Preview — Clean Layout</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='80'>👻</text></svg>">
   <style>
-  /* ---------- Tokens ---------- */
+  /* ---------- Tokens (light site) ---------- */
   :root{
     --bg:#f8fafc; --panel:#ffffff; --ink:#0f172a; --muted:#475569;
     --accent:#2563eb; --border:#e5e7eb; --max:980px;
-    --avatar-bg:#eef2ff;  /* avatar circle (light) */
-    --avatar-ink:#334155; /* avatar letters (light) */
+    --avatar-bg:#e5e7eb;   /* light circle */
+    --avatar-ink:#0f172a;  /* dark letters */
   }
 
   /* ---------- Base ---------- */
@@ -35,26 +31,19 @@
     outline:2px solid var(--accent); outline-offset:2px; border-radius:6px;
   }
 
-  /* ---------- Header / nav ---------- */
-  .header{background:#202b3b; color:#f8fafc; border-bottom:2px solid #cbd5e1; position:relative;}
+  /* ---------- Header (dark) ---------- */
+  .header{background:#202b3b; color:#f8fafc; border-bottom:2px solid #cbd5e1}
   .header .inner{display:flex; align-items:center; gap:18px; padding:16px 24px; margin:0 auto; max-width:var(--max)}
   .brand{display:flex; align-items:center; gap:12px; text-decoration:none; color:inherit}
-  .brand .avatar{
-    width:44px; height:44px; border-radius:50%;
-    display:grid; place-items:center; font-weight:700;
-    background:var(--avatar-bg); color:var(--avatar-ink);
-  }
+  .brand .avatar{width:44px; height:44px; border-radius:50%; display:grid; place-items:center; font-weight:700; background:var(--avatar-bg); color:var(--avatar-ink)}
   .brand h1{font-size:20px; margin:0}
   .brand p{margin:0; color:var(--muted); font-size:14px}
 
+  /* Nav in dark header */
   .nav{margin-left:auto; display:flex; gap:14px; flex-wrap:wrap}
-  .nav a{display:inline-block; padding:10px 12px; border-radius:10px; text-decoration:none;
-         color:var(--ink); background:#f1f5f9; border:1px solid var(--border); position:relative; z-index:1;}
-  .nav a:hover{filter:brightness(0.98)}
-  /* invert nav in header */
-  .header .nav a{ background:transparent; border:1px solid rgba(255,255,255,.25); color:#f8fafc; }
-  .header .nav a:hover{ background:rgba(255,255,255,.08); }
-  .header .nav a[aria-current="page"]{ background:rgba(255,255,255,.18); border-color:rgba(255,255,255,.35); }
+  .nav a{display:inline-block; padding:10px 12px; border-radius:10px; text-decoration:none; background:transparent; color:#f8fafc; border:1px solid rgba(255,255,255,.25)}
+  .nav a:hover{background:rgba(255,255,255,.08)}
+  .nav a[aria-current="page"]{background:rgba(255,255,255,.18); border-color:rgba(255,255,255,.35)}
 
   /* ---------- Layout ---------- */
   .container{max-width:var(--max); margin:0 auto; padding:24px}
@@ -73,42 +62,18 @@
   .sidebar li{margin:6px 0}
 
   /* Content cards */
-  .content{ background:#f8fafc; }
-  .content .section{
-    background:var(--panel); border:1px solid var(--border); border-radius:16px; padding:20px; margin-bottom:18px;
-    box-shadow:0 1px 0 rgba(15,23,42,.02), 0 8px 24px rgba(15,23,42,.06)
-  }
+  .content{background:var(--bg)}
+  .content .section{background:var(--panel); border:1px solid var(--border); border-radius:16px; padding:20px; margin-bottom:18px; box-shadow:0 1px 0 rgba(15,23,42,.02), 0 8px 24px rgba(15,23,42,.06)}
   .content h2{margin:0 0 10px; font-weight:700}
 
   /* Footer */
   .footer{border-top:1px solid var(--border); color:var(--muted); text-align:center; padding:16px}
 
   /* Hide empty sections (modern browsers) */
-  .section:has(> ul:empty), .section:has(> ol:empty){ display:none }
-
-  /* ---------- Dark Theme (toggle via body.theme-dark) ---------- */
-  .theme-dark{
-    --bg:#0b1220; --panel:#0f172a; --ink:#e5e7eb; --muted:#94a3b8;
-    --accent:#60a5fa; --border:#1f2937;
-    --avatar-bg:#e5e7eb;  /* bright circle on dark */
-    --avatar-ink:#0f172a; /* dark letters inside */
-  }
-  .theme-dark .header{ background:#0b1220; color:#f1f5f9; border-bottom:2px solid #0a101d; }
-  .theme-dark .header .nav a{
-    background:transparent; border:1px solid rgba(255,255,255,.25); color:#f1f5f9;
-  }
-  .theme-dark .header .nav a:hover{ background:rgba(255,255,255,.10); }
-  .theme-dark .header .nav a[aria-current="page"]{
-    background:rgba(255,255,255,.20); border-color:rgba(255,255,255,.40);
-  }
-  .theme-dark .content{ background:var(--bg); }
-  .theme-dark .content .section{
-    box-shadow:0 1px 0 rgba(0,0,0,.20), 0 8px 24px rgba(0,0,0,.35);
-  }
+  .section:has(> ul:empty), .section:has(> ol:empty){display:none}
   </style>
 </head>
-
-<body class="theme-dark">
+<body>
   <a class="skip-link" href="#content">Skip to main content</a>
 
   <header class="header">
@@ -117,7 +82,7 @@
         <span class="avatar" aria-hidden="true">YC</span>
         <div>
           <h1>Yifang Chen</h1>
-          <p>Preview — Nav & Layout</p>
+          <p>Currently a PhD student in computational biophysics</p>
         </div>
       </a>
       <nav class="nav" aria-label="Primary">
@@ -143,25 +108,24 @@
 
       <section class="section">
         <h2>News</h2>
-        <ul><!-- Empty on purpose to exercise :has() --></ul>
+        <ul></ul>
       </section>
 
       <section class="section">
         <h2>News</h2>
-        <p class="lead">NOPE</p>
+        <p class="lead">Nope</p>
       </section>
     </div>
   </main>
 
   <footer class="footer">
-    <p>© <span id="y"></span> Preview</p>
+    <p>© <span id="y"></span> YFC</p>
   </footer>
 
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+  <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
 </body>
 </html>
+
 
 
 
