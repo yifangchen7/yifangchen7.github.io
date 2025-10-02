@@ -10,8 +10,8 @@
   :root{
     --bg:#f8fafc; --panel:#ffffff; --ink:#0f172a; --muted:#475569;
     --accent:#2563eb; --border:#e5e7eb; --max:980px;
-    --avatar-bg:#eef2ff;  /* avatar circle (light) */
-    --avatar-ink:#334155; /* avatar letters (light) */
+    --avatar-bg:#e5e7eb;   /* light circle */
+    --avatar-ink:#0f172a;  /* dark letters */
   }
 
   /* ---------- Base ---------- */
